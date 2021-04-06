@@ -1,4 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:nebula/layers/colorLayer.dart';
+import 'package:nebula/layers/glassLayer.dart';
+import 'package:nebula/layers/textLayer.dart';
+import 'package:nebula/pages/categoryPage.dart';
 
 class WelcomePage extends StatelessWidget {
   @override
@@ -7,11 +14,14 @@ class WelcomePage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            height: double.infinity,
-            width: double.infinity,
-            child: Center(
-              child: Text("nebula"),
-            ),
+            color: Colors.black,
+          ),
+          ColorLayer(),
+          GlassLayer(),
+          TextLayer(),
+          TextButton(
+            child: Container(),
+            onPressed: () => Get.off(CategoryPage()),
           ),
         ],
       ),
