@@ -10,6 +10,7 @@ class Nebula extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(fontFamily: "Roboto"),
+      darkTheme: ThemeData(brightness: Brightness.dark),
       home: WelcomePage(),
     );
   }
