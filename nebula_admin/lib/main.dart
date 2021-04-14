@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import './pages/homePage.dart';
+import './services/auth.dart';
 
 void main() => runApp(NebulaAdmin());
 
@@ -12,7 +13,6 @@ class NebulaAdmin extends StatefulWidget {
 
 class _NebulaAdminState extends State<NebulaAdmin> {
   bool _initialized = false;
-
   bool _error = false;
 
   void initializeFlutterFire() async {

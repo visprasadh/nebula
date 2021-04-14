@@ -1,10 +1,13 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:nebula_admin/services/auth.dart';
 
 import '../widgets/uploadButton.dart';
 import '../widgets/header.dart';
+import 'errorPage.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -12,6 +15,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _auth = Auth();
+  bool _error = false;
+
+  Future authenticate() async {
+    dynamic result = await _auth.signIn();
+    if (result == null)
+      Get.off(() => ErrorPage());
+    else
+      print('Logged in successfully');
+  }
+
   File _image;
   final picker = ImagePicker();
 
@@ -32,6 +46,12 @@ class _HomePageState extends State<HomePage> {
       } else
         print("No image selected");
     });
+  }
+
+  @override
+  void initState() {
+    authenticate();
+    super.initState();
   }
 
   @override
