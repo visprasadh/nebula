@@ -12,14 +12,12 @@ class Header extends StatelessWidget {
             'nebula',
             style: TextStyle(
               fontSize: 32,
-              fontFamily: 'Poppins',
             ),
           ),
           Text(
             'ADMIN',
             style: TextStyle(
               fontSize: 18,
-              fontFamily: 'Poppins',
               letterSpacing: 5,
             ),
           ),

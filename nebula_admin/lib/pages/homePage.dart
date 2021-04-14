@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../widgets/uploadButton.dart';
 import '../widgets/header.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,7 +56,6 @@ class _HomePageState extends State<HomePage> {
                           'Add Wallpaper',
                           style: TextStyle(
                             fontSize: 14,
-                            fontFamily: 'Poppins',
                           ),
                         ),
                       ],
@@ -77,35 +77,13 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        Row(
-                          children: [
-                            Container(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 10,
-                                horizontal: 20,
-                              ),
-                              decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                ),
-                              ),
-                              child: DropdownButton(
-                                items: categories
-                                    .map<DropdownMenuItem<String>>(
-                                      (String value) => DropdownMenuItem(
-                                        child: Text(value),
-                                        value: value,
-                                      ),
-                                    )
-                                    .toList(),
-                                hint: Text('Choose Category'),
-                              ),
-                            ),
-                            TextButton(
-                              child: Container(
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
                                 padding: EdgeInsets.symmetric(
-                                  vertical: 10,
                                   horizontal: 20,
                                 ),
                                 decoration: BoxDecoration(
@@ -114,18 +92,22 @@ class _HomePageState extends State<HomePage> {
                                     Radius.circular(10),
                                   ),
                                 ),
-                                child: Text(
-                                  'Upload',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                  ),
+                                child: DropdownButton(
+                                  underline: SizedBox(),
+                                  items: categories
+                                      .map<DropdownMenuItem<String>>(
+                                        (String value) => DropdownMenuItem(
+                                          child: Text(value),
+                                          value: value,
+                                        ),
+                                      )
+                                      .toList(),
+                                  hint: Text('Wallpaper Category'),
                                 ),
                               ),
-                              onPressed: () {},
-                            ),
-                          ],
+                              UploadButton(),
+                            ],
+                          ),
                         ),
                       ],
                     ),
