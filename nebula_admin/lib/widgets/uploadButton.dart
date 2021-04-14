@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class UploadButton extends StatelessWidget {
+  Function onPressed;
+  UploadButton(this.onPressed);
   @override
   Widget build(BuildContext context) {
     return TextButton(
@@ -23,7 +25,7 @@ class UploadButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
     );
   }
 }

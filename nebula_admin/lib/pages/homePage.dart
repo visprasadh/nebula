@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:nebula_admin/services/auth.dart';
+import 'package:nebula_admin/services/firestore.dart';
 
 import '../widgets/uploadButton.dart';
 import '../widgets/header.dart';
@@ -16,7 +17,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _auth = Auth();
-  bool _error = false;
 
   Future authenticate() async {
     dynamic result = await _auth.signIn();
@@ -46,6 +46,19 @@ class _HomePageState extends State<HomePage> {
       } else
         print("No image selected");
     });
+  }
+
+  void buttonPress() => upload('linn_pic', 'gurushankar');
+
+  void upload(String name, String photographer) {
+    AddWallpaper addWallpaper = AddWallpaper(
+      name: name,
+      photographer: photographer,
+      url: 'url',
+      category: _value,
+    );
+    addWallpaper.addWallpaper();
+    setState(() => _image = null);
   }
 
   @override
@@ -130,7 +143,7 @@ class _HomePageState extends State<HomePage> {
                                       setState(() => _value = value),
                                 ),
                               ),
-                              UploadButton(),
+                              UploadButton(buttonPress),
                             ],
                           ),
                         ),
