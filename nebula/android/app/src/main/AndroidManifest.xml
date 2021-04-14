@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.nebula">
+    package="com.nitpy.nebula">
    <application
         android:label="nebula"
         android:icon="@mipmap/ic_launcher">
