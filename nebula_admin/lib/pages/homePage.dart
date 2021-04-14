@@ -14,6 +14,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   File _image;
   final picker = ImagePicker();
+
+  String _value;
   final categories = [
     'Architecture',
     'Aerial',
@@ -93,6 +95,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ),
                                 child: DropdownButton(
+                                  value: _value,
                                   underline: SizedBox(),
                                   items: categories
                                       .map<DropdownMenuItem<String>>(
@@ -103,6 +106,8 @@ class _HomePageState extends State<HomePage> {
                                       )
                                       .toList(),
                                   hint: Text('Wallpaper Category'),
+                                  onChanged: (value) =>
+                                      setState(() => _value = value),
                                 ),
                               ),
                               UploadButton(),
