@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "705749945752",
+    "project_id": "nebula-nitpy",
+    "storage_bucket": "nebula-nitpy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705749945752:android:5523f4eff2b96bef736fed",
+        "android_client_info": {
+          "package_name": "com.nitpy.nebula"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705749945752-9smpe2pj1dfmle14hmsdrb0m99vr1dui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUmxgBsq1XA59pSDVKRtFTas1whT_qmNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705749945752-9smpe2pj1dfmle14hmsdrb0m99vr1dui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

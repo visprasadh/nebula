@@ -21,7 +21,7 @@ class WelcomePage extends StatelessWidget {
           TextLayer(),
           TextButton(
             child: Container(),
-            onPressed: () => Get.off(CategoryPage()),
+            onPressed: () => Get.off(() => CategoryPage()),
           ),
         ],
       ),
