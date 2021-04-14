@@ -1,4 +1,4 @@
-package com.example.nebula_admin
+package com.nitpy.nebula_admin
 
 import io.flutter.embedding.android.FlutterActivity
 
