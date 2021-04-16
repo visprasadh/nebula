@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import './pages/homePage.dart';
 import './services/auth.dart';
@@ -38,8 +39,12 @@ class _NebulaAdminState extends State<NebulaAdmin> {
   Widget build(BuildContext context) {
     if (_error) return error();
     if (!_initialized) return CircularProgressIndicator();
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'Poppins'),
+    return GetMaterialApp(
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        primaryColor: Colors.black,
+        accentColor: Colors.black,
+      ),
       home: HomePage(),
     );
   }
